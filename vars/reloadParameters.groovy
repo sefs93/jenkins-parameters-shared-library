@@ -1,8 +1,9 @@
 //opts.reload_parameters
-def call (Map opts) {
+def call () {
     try {
-        if (opts.reload_parameters == 'true') {
+        if (params.RELOAD_PARAMETERS) {
             stage('Reload parameters') {
+                currentBuild.displayName = 'RELOAD_PARAMETERS'
                 currentBuild.result = 'ABORTED'
             }
         }

@@ -17,6 +17,10 @@ def call () {
                 'us-east-1': [
                     'project_id': 'some-uat-us-east-1-project',
                     'creds': 'some-uat-us-east-1-creds'
+                ],
+                'us-west-1': [
+                    'project_id': 'some-uat-us-west-1-project',
+                    'creds': 'some-uat-us-west-1-creds'
                 ]
             ]
         ],
@@ -39,6 +43,10 @@ def call () {
                 'sa-west-1': [
                     'project_id': 'some-uat-sa-west-1-project',
                     'creds': 'some-uat-sa-west-1-creds'
+                ],
+                'sa-north-1': [
+                    'project_id': 'some-uat-sa-north-1-project',
+                    'creds': 'some-uat-sa-north-1-creds'
                 ]
             ],
         ]

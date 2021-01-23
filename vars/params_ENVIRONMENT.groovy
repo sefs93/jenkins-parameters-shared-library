@@ -1,5 +1,5 @@
 def call() {
-    def param_script = """def data = '''${groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(_envProperties()))}
+    def param_script = """def data = '''${groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(_envProperties()))}'''
     def param_values = new ArrayList<>(new groovy.json.JsonSlurper().parseText(data)[COUNTRY].keySet())
     return param_values
     """

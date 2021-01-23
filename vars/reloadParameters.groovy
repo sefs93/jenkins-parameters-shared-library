@@ -9,6 +9,7 @@ def call () {
             }
         }
     } catch (e) {
+        println e
         println "[WARN] RELOAD_PARAMETERS parameter is not defined yet. Skipping"
     }
 }

@@ -6,7 +6,7 @@
 def call (Map opts) {
     node {
         stage ('Deploy') {
-            def env_properties = getEnvironmentProperties(country: opts.country, env: opts.env, refion: opts.region)
+            def env_properties = getEnvironmentProperties(country: opts.country, env: opts.env, region: opts.region)
             println '=========================================================================================='
             println "[INFO] Deploying service:\t${opts.service}:${opts.version}"
             println "[INFO] country:\t\t\t${opts.country}"

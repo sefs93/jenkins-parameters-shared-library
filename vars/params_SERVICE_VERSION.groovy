@@ -16,7 +16,7 @@ def call() {
             script: [
                 classpath: [],
                 sandbox: false,
-                script: '''def command = 'ls -1t /var/lib/jenkins/userContent/services/\${SERVICE_NAME}/'
+                script: '''def command = "ls -1t /var/lib/jenkins/userContent/services/\${SERVICE_NAME}/"
                 def proc = command.execute()
                 proc.waitFor()
 

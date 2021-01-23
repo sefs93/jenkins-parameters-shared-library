@@ -5,21 +5,24 @@ def call (String param) {
     def param_referencedParameters = ''
     switch(param) { 
         case 'COUNTRY': 
-            param_script = """def data = '''${groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(_envProperties()))}'''
+            param_script = """def get = new URL("https://raw.githubusercontent.com/sefs93/jenkins-parameters-env-properties/master/env_props.json").openConnection()
+            def data = get.getInputStream().getText()
             def param_values = new ArrayList<>(new groovy.json.JsonSlurper().parseText(data).keySet())
             return param_values
             """
             break
         case 'ENVIRONMENT': 
             param_referencedParameters = 'COUNTRY'
-            param_script = """def data = '''${groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(_envProperties()))}'''
+            param_script = """def get = new URL("https://raw.githubusercontent.com/sefs93/jenkins-parameters-env-properties/master/env_props.json").openConnection()
+            def data = get.getInputStream().getText()
             def param_values = new ArrayList<>(new groovy.json.JsonSlurper().parseText(data)[COUNTRY].keySet())
             return param_values
             """
             break
         case 'REGION': 
             param_referencedParameters = 'COUNTRY,ENVIRONMENT'
-            param_script = """def data = '''${groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(_envProperties()))}'''
+            param_script = """def get = new URL("https://raw.githubusercontent.com/sefs93/jenkins-parameters-env-properties/master/env_props.json").openConnection()
+            def data = get.getInputStream().getText()
             def param_values = new ArrayList<>(new groovy.json.JsonSlurper().parseText(data)[COUNTRY][ENVIRONMENT].keySet())
             return param_values
             """

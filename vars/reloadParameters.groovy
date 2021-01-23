@@ -5,6 +5,7 @@ def call () {
             stage('Reload parameters') {
                 currentBuild.displayName = 'RELOAD_PARAMETERS'
                 currentBuild.result = 'ABORTED'
+                error('RELOAD_PARAMETERS')
             }
         }
     } catch (e) {

@@ -1,7 +1,7 @@
 def call (String param) {
     def param_script = ''
     def param_name = param
-    def param_randomName = 'choice-parameter-' + param.md5()
+    def param_randomName = 'choice-parameter-' + param
     def param_referencedParameters = ''
     switch(param) { 
         case 'COUNTRY': 
